@@ -1,0 +1,3 @@
+[submodule "wordle-android"]
+	path = wordle-android
+	url = git@github.com:sjcqs/wordle-android.git
