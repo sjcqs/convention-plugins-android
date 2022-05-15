@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44b29991-e750-4382-b5b0-6fb8ec43464e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/convention-plugins-presentation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/0-intro.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/1-multi-module-schema.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/2-objectives.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/3-include-build.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/4-writing-plugin.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/5-gotchas.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/6-references.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/2-objectives.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2-objectives.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3-include-build.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3-include-build.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +66,7 @@
       <updated>1652516699825</updated>
       <workItem from="1652516701018" duration="8185000" />
       <workItem from="1652533621042" duration="2908000" />
+      <workItem from="1652602957987" duration="6571000" />
     </task>
     <servers />
   </component>

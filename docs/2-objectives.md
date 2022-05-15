@@ -52,9 +52,9 @@ android {
 }
 
 dependencies {
-    implementation(libs["kotlin.stdlib"])
+    implementation(libs.kotlin.stdlib)
 
-    coreLibraryDesugaring(libs["desugarJdk"])
+    coreLibraryDesugaring(libs.desugarJdk)
     
     implementation(projects.data.game.public)
     implementation(projects.data.settings.public)
@@ -92,23 +92,6 @@ feature {
 dependencies {
     implementation(projects.data.game.public)
     implementation(projects.data.settings.public)
-}
-```
-
-### Allow configuration of our convention plugins
-
-For example here, the `feature` extension allows to enable `compose` or not. 
-``` kotlin
-feature {
-    compose.set(true)
-}
-```
-
-In our plugin if it's enable it will simply configure our module with
-``` kotlin
-buildFeatures.compose = true
-composeOptions {
-    kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
 }
 ```
 
