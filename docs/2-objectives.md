@@ -3,7 +3,11 @@
 
 ### Simplify our modules build configurations files
 Let's take for example: `feature/game/build.gradle.kts`
-- From: 
+
+From this:
+<details>
+<summary>💻</summary>
+
 ``` kotlin
 plugins {
     id("config")
@@ -13,7 +17,7 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+compileSdk = 32
 
     defaultConfig {
         minSdk = 26
@@ -52,7 +56,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.kotlin.stdlib)
+implementation(libs.kotlin.stdlib)
 
     coreLibraryDesugaring(libs.desugarJdk)
     
@@ -79,7 +83,12 @@ dependencies {
     testImplementation(libs.androidx.test.rules)
 }
 ```
-- To [this](../wordle-android/feature/game/build.gradle.kts):
+</details>
+
+To [this](../wordle-android/feature/game/build.gradle.kts):
+<details>
+<summary>💻</summary>
+
 ``` kotlin
 plugins {
     id("fr.sjcqs.android.feature")
@@ -91,9 +100,7 @@ dependencies {
     implementation(projects.data.settings.public)
 }
 ```
-
-### Notes: 
-`libs.<library>` or `libs.versions.<version>` is Gradle's [version catalog API](https://docs.gradle.org/current/userguide/platforms.html)
+</details>
 
 ---
 ⏭️ [Let's start by creating our plugins project and included it in our app](3-include-build.md)

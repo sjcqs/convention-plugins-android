@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44b29991-e750-4382-b5b0-6fb8ec43464e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs/AndroidApplicationWithComposePlugin.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs/AndroidLibraryWithComposePlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/2-objectives.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2-objectives.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/3-include-build.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3-include-build.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/4-writing-plugin.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4-writing-plugin.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/5-gotchas.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5-gotchas.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/6-references.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6-references.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordle-android" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordle-android/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordle-android/feature/game/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/feature/game/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordle-android/plugins/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/plugins/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/extensions/VersionCatalogExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/extensions/VersionCatalogExtension.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android/feature/settings/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/feature/settings/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android/feature/stats/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/feature/stats/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs/AndroidAppPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs/AndroidAppPlugin.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +92,7 @@
       <workItem from="1652533621042" duration="2908000" />
       <workItem from="1652602957987" duration="6571000" />
       <workItem from="1654279845709" duration="479000" />
-      <workItem from="1654280421109" duration="3722000" />
+      <workItem from="1654280421109" duration="11708000" />
     </task>
     <servers />
   </component>

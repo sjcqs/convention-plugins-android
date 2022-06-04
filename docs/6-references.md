@@ -1,8 +1,8 @@
 # Improve your multi-module app build configuration with convention plugins
 ## References
 
-Those references should not be blindly followed. Most of them are from people working in large companies 
-with multiples people working on a single app and even people dedicated to build configuration and DX.
+Those references should not be blindly followed. Some of them are from people working in large companies 
+with multiples people working on a single app and even people dedicated to build configuration.
 
 Take what you need, depending on the scale of your app and your team. ~~Don't be a fanboy.~~  
 
@@ -20,10 +20,18 @@ Slack [started open sourcing](https://slack.engineering/developing-in-the-open/)
 [A talk from Android Makers 2022](https://www.youtube.com/watch?v=CkKtCuqqxHs) with some best practices to improve
 build time. 
 
-### Now in Android source code
+### Now in Android project
 The Android team recently open-sourced an app with some good practices to build applications. 
 
 🔗 https://github.com/android/nowinandroid
+
+### Proton core projects
+Proton mail source code is open source. They have shared libraries in [ProtonMail/protoncore_android](https://github.com/ProtonMail/protoncore_android)
+
+In [plugins/core/src/main/kotlin/me/proton/core/gradle](https://github.com/ProtonMail/protoncore_android/tree/main/plugins/core/src/main/kotlin/me/proton/core/gradle), they 
+are defining their convention plugins. 
+
+_IMHO: it's a bit overkill the way they did it, but it's still a good reference_
 
 ### People 👨‍💻
 🐦 [Tony Robalik](https://twitter.com/autonomousapps) from Square
@@ -31,9 +39,5 @@ The Android team recently open-sourced an app with some good practices to build 
 🐦 [Zac Sweers](https://twitter.com/ZacSweers) from Slack
 
 ---
-❓ Questions 
-
-👩‍💻/👨‍💻 My company is hiring feel free to reach out 
-
-
-🐦 [@sjcqs](https://twitter.com/sjcqs)
+❓ Questions
+🐦 [@sjcqs](https://twitter.com/sjcqs) (_feel free to reach out_)
