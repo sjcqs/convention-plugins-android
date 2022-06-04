@@ -2,6 +2,6 @@
 ## Writing one of our plugin
 
 ---
-⏭️ [Some gotchas](5-gotchas.md)
+⏭️ [Some gotchas and further thoughts](5-gotchas.md)
 
 🐦 [@sjcqs](https://twitter.com/sjcqs)

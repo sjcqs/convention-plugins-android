@@ -5,21 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44b29991-e750-4382-b5b0-6fb8ec43464e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/4-writing-plugin.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/5-gotchas.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/6-references.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs/AndroidApplicationWithComposePlugin.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs/AndroidLibraryWithComposePlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/2-objectives.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2-objectives.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/3-include-build.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3-include-build.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/4-writing-plugin.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4-writing-plugin.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/5-gotchas.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5-gotchas.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/6-references.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6-references.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android/feature/game/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/feature/game/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android/plugins/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/plugins/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/extensions/VersionCatalogExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/plugins/src/main/java/extensions/VersionCatalogExtension.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/wordle-android/plugins">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,28 +61,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/satyan/IdeaProjects/convention-plugins-presentation/docs/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Markdown&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "/Users/satyan/Projects/convention-plugins-android/wordle-android/plugins/src/main/java/fr/sjcqs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs" />
       <recent name="$PROJECT_DIR$/docs/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="fr.sjcqs" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -67,6 +100,8 @@
       <workItem from="1652516701018" duration="8185000" />
       <workItem from="1652533621042" duration="2908000" />
       <workItem from="1652602957987" duration="6571000" />
+      <workItem from="1654279845709" duration="479000" />
+      <workItem from="1654280421109" duration="3722000" />
     </task>
     <servers />
   </component>
@@ -83,6 +118,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/template-android" />
+    </ignored-roots>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -16,8 +16,12 @@ Slack [started open sourcing](https://slack.engineering/developing-in-the-open/)
 
 🔗 https://github.com/slackhq/slack-gradle-plugin
 
+### Improve Build Times in Less Time by Zac Sweers, Slack 🎬
+[A talk from Android Makers 2022](https://www.youtube.com/watch?v=CkKtCuqqxHs) with some best practices to improve
+build time. 
+
 ### Now in Android source code
-The Android team recently open-sourced an app with some best practices to build applications.
+The Android team recently open-sourced an app with some good practices to build applications. 
 
 🔗 https://github.com/android/nowinandroid
 
@@ -27,6 +31,9 @@ The Android team recently open-sourced an app with some best practices to build 
 🐦 [Zac Sweers](https://twitter.com/ZacSweers) from Slack
 
 ---
-❓ Questions ? 
+❓ Questions 
+
+👩‍💻/👨‍💻 My company is hiring feel free to reach out 
+
 
 🐦 [@sjcqs](https://twitter.com/sjcqs)

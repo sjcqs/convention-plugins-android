@@ -60,6 +60,6 @@ gradlePlugin {
 ```
 
 ---
-⏭️ [Now let's write our plugin](4-writing-plugin.md)
+⏭️ [Now let's write our plugins](4-writing-plugin.md)
 
 🐦 [@sjcqs](https://twitter.com/sjcqs)

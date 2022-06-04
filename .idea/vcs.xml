@@ -2,7 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/template-android" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/wordle-android" vcs="Git" />
   </component>
 </project>

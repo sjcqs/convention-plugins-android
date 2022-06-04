@@ -79,14 +79,11 @@ dependencies {
     testImplementation(libs.androidx.test.rules)
 }
 ```
-- [To](../wordle-android/feature/game/build.gradle.kts):
+- To [this](../wordle-android/feature/game/build.gradle.kts):
 ``` kotlin
 plugins {
     id("fr.sjcqs.android.feature")
-}
-
-feature {
-    compose.set(true)
+    id("fr.sjcqs.android.compose.lib")
 }
 
 dependencies {
