@@ -4,7 +4,9 @@
 Those references should not be blindly followed. Some of them are from people working in large companies 
 with multiples people working on a single app and even people dedicated to build configuration.
 
-Take what you need, depending on the scale of your app and your team. ~~Don't be a fanboy.~~  
+Take what you need, depending on the scale of your app and your team. 
+
+~~Don't be a fanboy 🤩~~  
 
 ### Herding elephants 🐘
 Some feedbacks and best practices by [Tony Robalik](https://twitter.com/autonomousapps) who is working on build and tooling at Square
