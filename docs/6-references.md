@@ -40,6 +40,11 @@ _IMHO: it's a bit overkill the way they did it, but it's still a good reference_
 
 🐦 [Zac Sweers](https://twitter.com/ZacSweers) from Slack
 
+### Any Questions ❓
+
 ---
-❓ Questions
 🐦 [@sjcqs](https://twitter.com/sjcqs) (_feel free to reach out_)
+
+👂 [Feedbacks:](https://forms.gle/n7YT55VdoVTeq8JR6)
+
+<img src="feedbacks.png" alt="https://forms.gle/n7YT55VdoVTeq8JR6" title="Feedbacks"/>
