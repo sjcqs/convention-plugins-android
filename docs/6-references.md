@@ -9,7 +9,7 @@ Take what you need, depending on the scale of your app and your team.
 ~~Don't be a fanboy 🤩~~  
 
 ### Herding elephants 🐘
-Some feedbacks and best practices by [Tony Robalik](https://twitter.com/autonomousapps) who is working on build and tooling at Square
+Some feedbacks and best practices on the Android's build configuration by [Tony Robalik](https://twitter.com/autonomousapps) who is working on build and tooling at Square
 
 🔗 https://developer.squareup.com/blog/herding-elephants/
 

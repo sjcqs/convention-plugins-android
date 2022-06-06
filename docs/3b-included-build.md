@@ -1,21 +1,37 @@
 # Improve your multi-module app build configuration with convention plugins
+
 ## Creating and including plugins in our app code
 
 ### Creating the [plugins](../wordle-android/plugins) module
 
-- [plugins](../wordle-android/plugins) directory with [settings.gradle](../wordle-android/plugins/settings.gradle.kts)
-- `includeBuild("plugins")` in [\<root\>/settings.gradle](../wordle-android/settings.gradle.kts)
+1. Create a [plugins](../wordle-android/plugins) directory with
+   a [settings.gradle](../wordle-android/plugins/settings.gradle.kts)
 
-### Sharing dependencies and versions:
-`libs.<library>` or `libs.versions.<version>` is Gradle's [version catalog API](https://docs.gradle.org/current/userguide/platforms.html).
+```kotlin
+enableFeaturePreview("VERSION_CATALOGS")
 
-To share a version catalog between your application and the plugins included build:
-<details>
-<summary>💻</summary>
-
-``` kotlin
 dependencyResolutionManagement {
-    // ...
+    repositories {
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+```
+
+2. Add `includeBuild("plugins")` in your app's root [settings.gradle](../wordle-android/settings.gradle.kts)
+
+### Sharing dependencies and versions between the included build and the app:
+
+```kotlin
+enableFeaturePreview("VERSION_CATALOGS")
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+    }
     // Sharing the root project version catalog
     versionCatalogs {
         create("libs") {
@@ -24,7 +40,6 @@ dependencyResolutionManagement {
     }
 }
 ```
-</details>
 
 You will have to use the unsafe API to access you version catalog from the plugins code.
 
@@ -35,9 +50,45 @@ Here's some useful extensions, I used in the plugins:
 <summary>💻</summary>
 
 ```kotlin
+class AndroidFeaturePlugin : Plugin<Project> {
+    override fun apply(target: Project) {
+        with(target) {
+            // ...
+
+            dependencies.apply {
+                // ...
+                add("implementation", libs["kotlin.coroutines.android"])
+                // ...
+            }
+        }
+    }
+}
+```
+
+```kotlin
+class AndroidLibraryWithComposePlugin : Plugin<Project> {
+    override fun apply(target: Project) {
+        with(target) {
+            // ...
+
+            extensions.configure<LibraryExtension> {
+                buildFeatures.compose = true
+                composeOptions {
+                    kotlinCompilerExtensionVersion = libs.requireVersion("composeCompiler")
+                }
+            }
+        }
+    }
+}
+```
+
+```kotlin
 internal val Project.libs: VersionCatalog
     get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
+/**
+ * Usage: libs["<library>']
+ */
 internal operator fun VersionCatalog.get(
     name: String
 ): Provider<MinimalExternalModuleDependency> {
@@ -56,14 +107,18 @@ internal fun VersionCatalog.requireVersion(alias: String): String {
     return optionalVersion.get().toString()
 }
 ```
+
 </details>
 
 ### Register the conventions plugins
-- Create a [build.gradle](../wordle-android/plugins/build.gradle.kts) file
-- Define the plugins you are going to use in your project conventions plugins as `compileOnly` [dependencies](../wordle-android/gradle/libs.versions.toml)
+
+1. Create a [build.gradle](../wordle-android/plugins/build.gradle.kts) file
+2. Define the plugins you are going to use in your project conventions plugins
+   as `compileOnly` [dependencies](../wordle-android/gradle/libs.versions.toml)
+
   <details>
   <summary>💻</summary>
-  
+
   ``` kotlin
   dependencies {
       compileOnly(libs.kotlin.gradle) // org.jetbrains.kotlin:kotlin-gradle-plugin
@@ -73,9 +128,30 @@ internal fun VersionCatalog.requireVersion(alias: String): String {
   
   }
   ```
+
   </details>
 
-- Register plugins:
+3. Register the plugins:
+
+```kotlin
+ plugins {
+    `kotlin-dsl` // will apply `java-gradle-plugin`
+}
+
+dependencies { ... }
+
+// java-gradle-plugin
+gradlePlugin {
+    plugins {
+        register("<name>") {
+            id = "<id>"
+            implementationClass = "<implementation class>"
+        }
+// ...
+    }
+}
+```
+
   <details>
   <summary>💻</summary>
 
@@ -86,7 +162,7 @@ internal fun VersionCatalog.requireVersion(alias: String): String {
   
   dependencies { ... }
   
-  // extension from java-gradle-plugin
+  // java-gradle-plugin
   gradlePlugin {
     plugins {
       register("<name>") {
@@ -116,6 +192,7 @@ internal fun VersionCatalog.requireVersion(alias: String): String {
     }
   }
   ```
+
   </details>
 
 ---

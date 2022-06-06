@@ -1,13 +1,15 @@
 # Improve your multi-module app build configuration with convention plugins
 
-## Why should my app code use multiple modules
+## Introduction
 
-- ~~\<insert big company name\> is doing it~~
-- Reduces the build time: 
-  - api/impl modules pattern (reuse build cache)
-  - Only use the necessary Gradle plugins in your module (android plugins are expensive)
-  - Parallel compilation
-- Create several apps (demo apps, free vs pro, for your back-end folks working one specific features)
+Last year at Nabla, when I wanted to create new feature, I had to:
+1. create a new module on Android Studio
+2. Copy-paste from the project README.md into the new module `build.gradle.kts`
+3. Remove some code I don't need
+
+It was painful and we had around 100 modules.
+
+In this talk, I will explain to you how to remedy this.
 
 ---
 ⏭️ [ Let's see a basic multi-module architecture](1-multi-module-schema.md)

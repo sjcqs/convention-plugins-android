@@ -1,6 +1,17 @@
 # Improve your multi-module app build configuration with convention plugins
 ## A multi-module architecture
 
+Why should I use a multi-module application ? 
+
+- Reduces the build time:
+    - api/impl modules pattern 
+      The API (~interfaces) is exposed inside an api module and its implementation inside an impl module
+      --> Module using the api module won't be recompiled if the implementation changed.
+    - Only use the necessary Gradle plugins in your module (android plugins are expensive)
+    - Gradle modules parallel compilation (`org.gradle.parallel=true`)
+- Create several apps (demo apps, free vs pro)
+- ~~\<insert big company name\> is doing it~~
+
 <div style="margin-left: auto;margin-right: auto; width: fit-content">
 
 ``` mermaid
@@ -54,10 +65,11 @@ flowchart TD
 ```
 </div>
 
+### Drawbacks
 - Each module has its own gradle configuration file (`build.gradle`)
 - `com.android.library` and `com.android.applications` plugins should be configured the same way for each modules
-- Feature modules will be configured the same way (with extra dependencies and plugins)
-- **⌘+C ⌘+V** 🙈
+- Feature modules are all configured the same way (with extra dependencies and plugins)
+- **⌘+C, ⌘+V** 🙈
 
 ---
 ⏭️ [Let's fix this ](2-objectives.md)

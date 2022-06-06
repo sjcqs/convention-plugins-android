@@ -1,6 +1,11 @@
 # Improve your multi-module app build configuration with convention plugins
 ## Writing one of our plugin
 
+Regardless of the language you are using in your `build.gradle(.kts)` files (Kotlin vs Groovy). You can write Gradle plugins
+in Groovy, Java or Kotlin. 
+
+The syntax is similar to the one you would use minus a few differences. 
+
 ### Android library module
 
 1. Creating the plugin class
@@ -261,7 +266,7 @@ dependencies {
 }
 ```
 
-### Android wiring plugin
+### Android wiring plugin (module with dependency injection)
 
 <details>
 <summary>💻</summary>

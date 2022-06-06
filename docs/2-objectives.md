@@ -1,12 +1,20 @@
 # Improve your multi-module app build configuration with convention plugins
+
 ## Objectives
 
 ### Simplify our modules build configurations files
-Let's take for example: `feature/game/build.gradle.kts`
 
-From this:
-<details>
-<summary>💻</summary>
+Let's take for example a feature module named **game** (`feature/game/build.gradle.kts`).
+
+We want to go:
+
+<table style="vertical-align: top;">
+ <tr>
+    <td>From this:</td>
+    <td>To this:</td>
+ </tr>
+ <tr>
+    <td>
 
 ``` kotlin
 plugins {
@@ -23,7 +31,7 @@ compileSdk = 32
         minSdk = 26
         targetSdk = 32
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = // ...
     }
 
 
@@ -35,7 +43,7 @@ compileSdk = 32
     
     buildFeatures.compose = true
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+        kotlinCompilerExtensionVersion = // ...
     }
     
     compileOptions {
@@ -48,9 +56,7 @@ compileSdk = 32
     kotlinOptions {
         jvmTarget = config.jvm.kotlinJvm
         freeCompilerArgs = freeCompilerArgs + listOf(
-            "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-            "-Xopt-in=kotlinx.coroutines.FlowPreview",
-            "-Xopt-in=kotlin.RequiresOptIn"
+            // ...
         )
     }
 }
@@ -83,11 +89,9 @@ implementation(libs.kotlin.stdlib)
     testImplementation(libs.androidx.test.rules)
 }
 ```
-</details>
 
-To [this](../wordle-android/feature/game/build.gradle.kts):
-<details>
-<summary>💻</summary>
+</td>
+    <td style="vertical-align: top;">
 
 ``` kotlin
 plugins {
@@ -100,9 +104,12 @@ dependencies {
     implementation(projects.data.settings.public)
 }
 ```
-</details>
+
+</td>
+ </tr>
+</table>
 
 ---
-⏭️ [Let's start by creating our plugins project and included it in our app](3-include-build.md)
+⏭️ [Let's start with a quick win](3-version-catalog.md)
 
 🐦 [@sjcqs](https://twitter.com/sjcqs)
