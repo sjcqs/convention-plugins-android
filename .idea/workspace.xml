@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44b29991-e750-4382-b5b0-6fb8ec43464e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/3-version-catalog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/custom-rules.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/0-intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/0-intro.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/1-multi-module-schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/1-multi-module-schema.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/2-objectives.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2-objectives.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/3-include-build.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3b-included-build.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/4-writing-plugin.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4-writing-plugin.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/5-gotchas.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5-gotchas.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/6-references.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6-references.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordle-android" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordle-android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wordle-android/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +59,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.toDoOptions"
+    "settings.editor.selected.configurable": "Settings.Markdown"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -96,7 +88,7 @@
       <workItem from="1654279845709" duration="479000" />
       <workItem from="1654280421109" duration="12268000" />
       <workItem from="1654421950582" duration="3011000" />
-      <workItem from="1654521412761" duration="8100000" />
+      <workItem from="1654521412761" duration="8495000" />
     </task>
     <servers />
   </component>
