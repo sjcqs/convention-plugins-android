@@ -385,7 +385,6 @@ Limit the number of dependencies (and plugins) declared in your conventions plug
 ### Further thoughts
 
 1. You could publish those plugins to an internal maven repository, it should also improve configuration and build time. (using binary vs compilation)
-
     But it comes at a few costs:
     - Setup your CI to publish those plugins
     - Version the plugins
