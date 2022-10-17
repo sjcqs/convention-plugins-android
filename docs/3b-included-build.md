@@ -41,7 +41,7 @@ dependencyResolutionManagement {
 }
 ```
 
-You will have to use the unsafe API to access you version catalog from the plugins code.
+You will have to use the unsafe API to access your version catalog from the plugins code.
 
 Here's some useful extensions, I used in the plugins:
 
@@ -113,11 +113,8 @@ internal fun VersionCatalog.requireVersion(alias: String): String {
 ### Register the conventions plugins
 
 1. Create a [build.gradle](../wordle-android/plugins/build.gradle.kts) file
-2. Define the plugins you are going to use in your project conventions plugins
+2. Define the plugins you are going to configure in your project conventions plugins
    as `compileOnly` [dependencies](../wordle-android/gradle/libs.versions.toml)
-
-  <details>
-  <summary>💻</summary>
 
   ``` kotlin
   dependencies {
@@ -129,13 +126,12 @@ internal fun VersionCatalog.requireVersion(alias: String): String {
   }
   ```
 
-  </details>
-
 3. Register the plugins:
 
 ```kotlin
  plugins {
-    `kotlin-dsl` // will apply `java-gradle-plugin`
+    `kotlin-dsl` // will apply `java-gradle-plugin 
+   id("java-gradle-plugin")
 }
 
 dependencies { ... }
@@ -165,30 +161,41 @@ gradlePlugin {
   // java-gradle-plugin
   gradlePlugin {
     plugins {
-      register("<name>") {
-        id = "<id>"
-        implementationClass = "<implementation class>"
-      }
+      // configure an application module 
       register("fr.sjcqs.android.app") {
-          id = "fr.sjcqs.android.app"
-          implementationClass = "fr.sjcqs.AndroidAppPlugin"
-      }
-      register("fr.sjcqs.android.feature") {
-          id = "fr.sjcqs.android.feature"
-          implementationClass = "fr.sjcqs.AndroidFeaturePlugin"
-      }
-      register("fr.sjcqs.android.lib") {
-          id = "fr.sjcqs.android.lib"
-          implementationClass = "fr.sjcqs.AndroidLibPlugin"
-      }
-      register("fr.sjcqs.android.wiring.lib") {
-          id = "fr.sjcqs.android.wiring.lib"
-          implementationClass = "fr.sjcqs.AndroidWiringLibPlugin"
-      }
-      register("fr.sjcqs.jvm.lib") {
-          id = "fr.sjcqs.jvm.lib"
-          implementationClass = "fr.sjcqs.JvmLibPlugin"
-      }
+            id = "fr.sjcqs.android.app"
+            implementationClass = "fr.sjcqs.AndroidAppPlugin"
+        }
+        // configure an feature module
+        register("fr.sjcqs.android.feature") {
+            id = "fr.sjcqs.android.feature"
+            implementationClass = "fr.sjcqs.AndroidFeaturePlugin"
+        }
+        // configure an library module
+        register("fr.sjcqs.android.lib") {
+            id = "fr.sjcqs.android.lib"
+            implementationClass = "fr.sjcqs.AndroidLibPlugin"
+        }
+        // configure an DI module
+        register("fr.sjcqs.android.wiring.lib") {
+            id = "fr.sjcqs.android.wiring.lib"
+            implementationClass = "fr.sjcqs.AndroidWiringLibPlugin"
+        }
+         // enable compose in a application module
+        register("fr.sjcqs.android.compose.app") {
+            id = "fr.sjcqs.android.compose.app"
+            implementationClass = "fr.sjcqs.AndroidApplicationWithComposePlugin"
+        }
+         // enable compose in a library module
+        register("fr.sjcqs.android.compose.lib") {
+            id = "fr.sjcqs.android.compose.lib"
+            implementationClass = "fr.sjcqs.AndroidLibraryWithComposePlugin"
+        }
+        // configure a jvm module
+        register("fr.sjcqs.jvm.lib") {
+            id = "fr.sjcqs.jvm.lib"
+            implementationClass = "fr.sjcqs.JvmLibPlugin"
+        }
     }
   }
   ```

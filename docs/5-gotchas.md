@@ -5,7 +5,7 @@
 ### Gotchas
 
 #### Gradle scripts
-It's possible to write gradle script in `src/main/java/<plugin-id>.build.gradle.kts`, Gradle will generate a script whose id is `<plugin-id>`
+It's possible to write gradle script in `src/main/java/<plugin-id>.build.gradle.kts`, Gradle will generate a plugin whose id is `<plugin-id>`
 
 Don't do this ([#39](https://github.com/android/nowinandroid/issues/39) on [android/nowinandroid](https://github.com/android/nowinandroid))
 
@@ -15,12 +15,13 @@ Don't do this ([#39](https://github.com/android/nowinandroid/issues/39) on [andr
 | Configuring Projects |     12.724s     | 0.765s       |
 
 #### Dependencies (~interface segregation principle)
-Limit the number of dependencies (and plugins) declared in your conventions plugins.  
-(cf [feature convention plugin](../wordle-android/plugins/src/main/java/fr/sjcqs/AndroidFeaturePlugin.kt))
+Limit the number of dependencies (and plugins) declared in your conventions plugins.
 
 ### Further thoughts
 
-You could publishing those plugins to an internal repository should also improve configuration and build time. But it comes at a few costs:
+You could publish those plugins to an internal maven repository, it should also improve configuration and build time. (using binary vs compilation)
+
+But it comes at a few costs:
 - Setup your CI to publish those plugins
 - Version the plugins
 - Switching between the internal repository and the included build when working on the build config

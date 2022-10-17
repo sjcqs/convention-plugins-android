@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44b29991-e750-4382-b5b0-6fb8ec43464e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/0-intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/0-intro.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/1-multi-module-schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/1-multi-module-schema.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/2-objectives.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2-objectives.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3-version-catalog.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3-version-catalog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3b-included-build.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3b-included-build.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/4-writing-plugin.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/4-writing-plugin.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/5-gotchas.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/5-gotchas.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/6-references.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/6-references.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +39,7 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/wordle-android" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -45,22 +53,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "/Users/satyan/Projects/convention-plugins-android/wordle-android/plugins/src/main/java/fr/sjcqs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Settings.Markdown"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/satyan/Projects/convention-plugins-android/wordle-android/plugins/src/main/java/fr/sjcqs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Markdown&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/wordle-android/plugins/src/main/java/fr/sjcqs" />
@@ -88,6 +96,8 @@
       <workItem from="1654280421109" duration="12268000" />
       <workItem from="1654421950582" duration="3011000" />
       <workItem from="1654521412761" duration="9148000" />
+      <workItem from="1654624863079" duration="3729000" />
+      <workItem from="1654699435146" duration="5636000" />
     </task>
     <servers />
   </component>

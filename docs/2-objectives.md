@@ -25,7 +25,7 @@ plugins {
 }
 
 android {
-compileSdk = 32
+    compileSdk = 32
 
     defaultConfig {
         minSdk = 26
@@ -62,7 +62,7 @@ compileSdk = 32
 }
 
 dependencies {
-implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlin.stdlib)
 
     coreLibraryDesugaring(libs.desugarJdk)
     

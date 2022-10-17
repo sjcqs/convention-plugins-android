@@ -6,7 +6,7 @@ with multiples people working on a single app and even people dedicated to build
 
 Take what you need, depending on the scale of your app and your team. 
 
-~~Don't be a fanboy 🤩~~  
+~~Don't be a fanboy 🤩~~
 
 ### Herding elephants 🐘
 Some feedbacks and best practices on the Android's build configuration by [Tony Robalik](https://twitter.com/autonomousapps) who is working on build and tooling at Square
@@ -40,11 +40,13 @@ _IMHO: it's a bit overkill the way they did it, but it's still a good reference_
 
 🐦 [Zac Sweers](https://twitter.com/ZacSweers) from Slack
 
+### Feedbacks 👂
+
+[Here:](https://forms.gle/fa6fKB66KG2VQV4C6)
+
+<img src="feedback.png" alt="https://forms.gle/n7YT55VdoVTeq8JR6" title="Feedbacks"/>
+
 ### Any Questions ❓
 
 ---
 🐦 [@sjcqs](https://twitter.com/sjcqs) (_feel free to reach out_)
-
-👂 [Feedbacks:](https://forms.gle/n7YT55VdoVTeq8JR6)
-
-<img src="feedbacks.png" alt="https://forms.gle/n7YT55VdoVTeq8JR6" title="Feedbacks"/>

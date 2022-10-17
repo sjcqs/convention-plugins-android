@@ -133,7 +133,7 @@ timber = "com.jakewharton.timber:timber:5.0.1"
 
 </details>
 
-Gradle will generate a `lib` property accessible from all your project modules.
+Gradle will generate a `libs` property accessible from all your project modules.
 
 - `libs.<library>` to get a dependency
 - `libs.versions.<version>` to get a version

@@ -10,7 +10,7 @@ Why should I use a multi-module application ?
     - Only use the necessary Gradle plugins in your module (android plugins are expensive)
     - Gradle modules parallel compilation (`org.gradle.parallel=true`)
 - Create several apps (demo apps, free vs pro)
-- ~~\<insert big company name\> is doing it~~
+- ~~Square/Slack/Twitter is doing it~~
 
 <div style="margin-left: auto;margin-right: auto; width: fit-content">
 

@@ -1,10 +1,10 @@
 # Improve your multi-module app build configuration with convention plugins
 ## Writing one of our plugin
 
-Regardless of the language you are using in your `build.gradle(.kts)` files (Kotlin vs Groovy). You can write Gradle plugins
-in Groovy, Java or Kotlin. 
+Regardless of the language you are using in your `build.gradle(.kts)` files (Kotlin vs Groovy).
+You can write Gradle plugins in Groovy, Java or Kotlin.
 
-The syntax is similar to the one you would use minus a few differences. 
+The syntax is similar to the one you would use in a `build.gradle` file.
 
 ### Android library module
 
@@ -33,7 +33,6 @@ The syntax is similar to the one you would use minus a few differences.
     ```kotlin
     package fr.sjcqs
     
-    import com.android.build.gradle.LibraryPlugin
     import org.gradle.api.Plugin
     import org.gradle.api.Project
     import org.gradle.kotlin.dsl.apply
@@ -42,8 +41,7 @@ The syntax is similar to the one you would use minus a few differences.
         override fun apply(target: Project) {
             with(target) {
                 with(pluginManager) {
-                    apply<ConfigureArchivesNamePlugin>()
-                    apply<LibraryPlugin>()
+                    apply("com.android.library")
                     apply("kotlin-android")
                 }
     
@@ -266,6 +264,52 @@ dependencies {
 }
 ```
 
+### Enabling compose in module
+<details>
+<summary>💻</summary>
+
+```kotlin
+package fr.sjcqs
+
+import com.android.build.gradle.LibraryExtension
+import com.android.build.gradle.LibraryPlugin
+import extensions.libs
+import extensions.requireVersion
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
+
+class AndroidLibraryWithComposePlugin : Plugin<Project> {
+    override fun apply(target: Project) {
+        with(target) {
+            pluginManager.apply("com.android.library")
+
+            extensions.configure<LibraryExtension> {
+                buildFeatures.compose = true
+                composeOptions {
+                    kotlinCompilerExtensionVersion = libs.requireVersion("composeCompiler")
+                }
+            }
+        }
+    }
+}
+```
+
+</details>
+
+##### Usage
+```kotlin
+plugins {
+    id("fr.sjcqs.android.feature")
+    id("fr.sjcqs.android.compose.lib") // ⬅️
+}
+
+dependencies {
+    implementation(projects.data.game.public)
+    implementation(projects.data.settings.public)
+}
+```
+
 ### Android wiring plugin (module with dependency injection)
 
 <details>
@@ -308,52 +352,6 @@ plugins {
 dependencies {
 api(projects.tools.logger.public)
 api(projects.tools.logger.impl)
-}
-```
-
-### Enabling compose in module
-<details>
-<summary>💻</summary>
-
-```kotlin
-package fr.sjcqs
-
-import com.android.build.gradle.LibraryExtension
-import com.android.build.gradle.LibraryPlugin
-import extensions.libs
-import extensions.requireVersion
-import org.gradle.api.Plugin
-import org.gradle.api.Project
-import org.gradle.kotlin.dsl.configure
-
-class AndroidLibraryWithComposePlugin : Plugin<Project> {
-    override fun apply(target: Project) {
-        with(target) {
-            pluginManager.apply(LibraryPlugin::class.java)
-
-            extensions.configure<LibraryExtension> {
-                buildFeatures.compose = true
-                composeOptions {
-                    kotlinCompilerExtensionVersion = libs.requireVersion("composeCompiler")
-                }
-            }
-        }
-    }
-}
-```
-
-</details>
-
-##### Usage
-```kotlin
-plugins {
-    id("fr.sjcqs.android.feature")
-    id("fr.sjcqs.android.compose.lib") // ⬅️
-}
-
-dependencies {
-    implementation(projects.data.game.public)
-    implementation(projects.data.settings.public)
 }
 ```
 

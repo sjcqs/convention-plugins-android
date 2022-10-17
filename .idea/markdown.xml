@@ -2,7 +2,7 @@
 <project version="4">
   <component name="MarkdownSettings">
     <option name="customStylesheetPath" value="$PROJECT_DIR$/docs/custom-rules.css" />
-    <option name="customStylesheetText" value="html, body {&#10;    height: 100%;&#10;}&#10;&#10;html {&#10;    display: table;&#10;    margin: auto;&#10;}&#10;&#10;body {&#10;    font-size: 175% !important;&#10;    background: #111111;&#10;    display: table-cell;&#10;    vertical-align: middle;   &#10;}" />
+    <option name="customStylesheetText" value="html, body {&#10;    height: 100%;&#10;}&#10;&#10;html {&#10;    margin: auto;&#10;}&#10;&#10;body {&#10;    font-size: 150% !important;&#10;    background: #111111;&#10;    display: table-cell;&#10;    vertical-align: middle;   &#10;}" />
     <option name="hideErrorsInCodeBlocks" value="true" />
     <option name="useCustomStylesheetText" value="true" />
   </component>
