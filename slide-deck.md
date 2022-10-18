@@ -1,9 +1,9 @@
 ---
 paginate: true
 ---
-# Improve your multi-module app build config with convention plugins
-Satyan Jacquens - developer @Mojo
+# Improve your multi-module app build configuration with convention plugins
 
+Satyan Jacquens - developer @Mojo
 ---
 # A multi-module architecture
 ### Why should I use a multi-module application ?
@@ -15,6 +15,7 @@ Satyan Jacquens - developer @Mojo
     - Gradle modules parallel compilation
 - Create several apps (demo apps, free vs pro, white-labelling, etc)
 - ~~Square/Slack/Twitter is doing it~~
+
 ---
 
 # A multi-module architecture
@@ -172,6 +173,7 @@ gradlePlugin {
     }
 }
 ```
+
 ---
 ## Include the plugins build in our root project
 In our root project `settings.gradle.kts`:
@@ -314,7 +316,7 @@ class AndroidLibPlugin : Plugin<Project> {
         }
     }
 }
-``
+```
 
 ---
 ## Usage
@@ -343,11 +345,6 @@ We can reuse our convention plugin in another one.
 
 ```kotlin
 package fr.sjcqs
-
-import extensions.get
-import extensions.libs
-import org.gradle.api.Plugin
-import org.gradle.api.Project
 
 class AndroidFeaturePlugin : Plugin<Project> {
     override fun apply(target: Project) {
