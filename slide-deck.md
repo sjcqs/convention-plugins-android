@@ -1,5 +1,4 @@
 ---
-class: invert
 paginate: true
 ---
 # Improve your multi-module app build config with convention plugins
