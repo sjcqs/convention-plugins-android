@@ -11,7 +11,7 @@ Satyan Jacquens - developer @Mojo
 
 - Separation of the concerns
 - Reduces the build time:
-    - public/impl modules pattern (compilation avoidance)
+    - Compilation avoidance with public/impl modules pattern
     - Only use the necessary plugins in your module (android plugins are expensive)
     - Gradle modules parallel compilation
 - Create several apps (demo apps, free vs pro, white-labelling, etc)
