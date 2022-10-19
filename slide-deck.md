@@ -374,15 +374,7 @@ Don't do this (cf issue [#39](https://github.com/android/nowinandroid/issues/39)
 |   Total Build Time   |     25.373s     | 11.205s      |
 
 ---
-## Publishing
 
-You could publish those plugins to an internal maven repository, it should also improve configuration and build time. (using binary vs compilation)
-But it comes with a few costs:
-    - Setup your CI to publish those plugins
-    - Version the plugins
-    - Switching between the internal repository and the included build when working on the build config
-
----
 ## Disclaimers
 
 You don't have to follow this talk to the letter
