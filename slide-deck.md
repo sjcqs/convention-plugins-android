@@ -33,8 +33,7 @@ Satyan Jacquens - developer @Mojo
 ### Drawbacks
 - Each module has its own gradle configuration file (`build.gradle`)
 - `com.android.library` and `com.android.applications` plugins should be configured the same way for each modules
-- Feature modules are all configured the same way (with extra dependencies and plugins)
-- **⌘+C, ⌘+V** 🙈
+> **⌘+C, ⌘+V** 🙈
 
 ⏭️ Let's fix this
 
