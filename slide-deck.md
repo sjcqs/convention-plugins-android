@@ -92,7 +92,7 @@ A `libs` property will be accessible from all your modules build configuration.
 
 ---
 ## Creating the convention plugins project
-Alongside our app, let's create a `plugins` directory with a `settings.gradle.kts` file
+Inside our app folder, let's create a `plugins` directory with a `settings.gradle.kts` file
 
 ```kotlin
 dependencyResolutionManagement {
