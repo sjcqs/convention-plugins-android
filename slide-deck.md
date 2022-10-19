@@ -385,7 +385,7 @@ You don't have to follow this talk to the letter
     - Would you be able to maintain those plugins ? (and teach how ?)
 - _I'm not perfect nor an expert on the subject. There might be things that could be done in a better way._
 
-⏭️ Finally some references and peoples to follow
+⏭️ Finally some references and people to follow
 
 ---
 ## References
