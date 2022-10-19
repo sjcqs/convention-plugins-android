@@ -4,6 +4,7 @@ paginate: true
 # Improve your multi-module app build configuration with convention plugins
 
 Satyan Jacquens - developer @Mojo
+
 ---
 # A multi-module architecture
 ### Why should I use a multi-module application ?
@@ -17,7 +18,6 @@ Satyan Jacquens - developer @Mojo
 - ~~Square/Slack/Twitter is doing it~~
 
 ---
-
 # A multi-module architecture
 <style>
     img[alt~="center"] {
@@ -91,8 +91,8 @@ A `libs` property will be accessible from all your modules build configuration.
 ⏭️ Let's create our conventions plugins and included them in our app
 
 ---
-## Creating the `plugins` project
-Alongside our app, let's create our `plugins` project with a `settings.gradle` file
+## Creating the convention plugins project
+Alongside our app, let's create a `plugins` directory with a `settings.gradle.kts` file
 
 ```kotlin
 dependencyResolutionManagement {
@@ -111,36 +111,18 @@ versionCatalogs {
 ```
 
 ---
-## Creating the `plugins` project
-We will to use the unsafe API to access the version catalog from the plugins code.
-``` kotlin
-/**
-* Usage: libs["<library>']
-*/
-internal val Project.libs: VersionCatalog
-    get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
-internal operator fun VersionCatalog.get(name: String): Provider<MinimalExternalModuleDependency> {
-    val optionalDependency = findLibrary(name)
-    if (optionalDependency.isEmpty) {
-        error("$name is not a valid dependency, check your version catalog")
-    }
-    return optionalDependency.get()
-}
-
-internal fun VersionCatalog.requireVersion(alias: String): String {
-    val optionalVersion = findVersion(alias)
-    if (optionalVersion.isEmpty) {
-        error("$alias is not a valid version, check your version catalog")
-    }
-    return optionalVersion.get().toString()
-}
+## Include the plugins build in our root project
+In our root project `settings.gradle.kts`:
+```kotlin
+includeBuild("plugins")
 ```
 
----
-## Adding the plugins dependencies
+Plugins will be compiled and accessible in the app modules' build configuration.
 
-In our plugins, `build.gradle.kts`:
+---
+## Adding the used plugins as dependencies
+
+In our convention plugins project `build.gradle.kts`:
 Define the plugins that will be used in our app as `compileOnly` dependencies.
 
 ```kotlin
@@ -174,17 +156,6 @@ gradlePlugin {
 }
 ```
 
----
-## Include the plugins build in our root project
-In our root project `settings.gradle.kts`:
-```kotlin
-includeBuild("plugins")
-```
-
-Plugins will be compiled and accessible in our app's modules build configuration.
-
-> _Note:_ They can also be published and provided throught a Maven repository
-
 ⏭️ Now let's write our convention plugin
 
 ---
@@ -195,7 +166,6 @@ Regardless of the language we are using in our `build.gradle(.kts)` files (Kotli
 The syntax is similar to the one we would use in a `build.gradle` file.
 
 ---
-## Writing a convention plugin
 ### Creating the convention plugin class
 ```kotlin
 package fr.sjcqs
@@ -211,7 +181,6 @@ class AndroidLibPlugin : Plugin<Project> {
 ```
 
 ---
-## Writing a convention plugin
 ### Applying plugins on the target project
 ```kotlin
 package fr.sjcqs
@@ -234,7 +203,6 @@ class AndroidLibPlugin : Plugin<Project> {
 ```
 
 ---
-## Writing a convention plugin
 ### Configure the Android extension
 ```kotlin
 class AndroidLibPlugin : Plugin<Project> {
@@ -252,9 +220,26 @@ class AndroidLibPlugin : Plugin<Project> {
     }
 }
 ```
+---
+### Configure the Android extension
+Shared configuration properties:
+
+``` kotlin
+object Config {
+    val android = AndroidConfig(
+        minSdk = 26,
+        targetSdk = 31,
+        compileSdkVersion = 31,
+     )
+     val jvm = JvmConfig(
+        javaVersion = JavaVersion.VERSION_11,
+        kotlinJvm = "11",
+        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
+    )
+}
+```
 
 ---
-## Writing a convention plugin
 ### Configure the Android extension
 ```kotlin
 internal fun Project.configureAndroidAndKotlin(extension: CommonExtension<*, *, *, *>) {
@@ -300,7 +285,36 @@ private fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.()
 ```
 
 ---
-## Writing a convention plugin
+## Adding dependencies
+We have to use the unsafe API to access the version catalog from the plugins code.
+Extensions:
+- `project.libs["<library>']`
+- `project.requireVersion("<version-name>")`
+
+---
+## Adding dependencies
+``` kotlin
+internal val Project.libs: VersionCatalog
+    get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
+internal operator fun VersionCatalog.get(name: String): Provider<MinimalExternalModuleDependency> {
+    val optionalDependency = findLibrary(name)
+    if (optionalDependency.isEmpty) {
+        error("$name is not a valid dependency, check your version catalog")
+    }
+    return optionalDependency.get()
+}
+
+internal fun VersionCatalog.requireVersion(alias: String): String {
+    val optionalVersion = findVersion(alias)
+    if (optionalVersion.isEmpty) {
+        error("$alias is not a valid version, check your version catalog")
+    }
+    return optionalVersion.get().toString()
+}
+```
+
+---
 ### Adding the dependencies
 ```kotlin
 class AndroidLibPlugin : Plugin<Project> {
@@ -317,28 +331,10 @@ class AndroidLibPlugin : Plugin<Project> {
     }
 }
 ```
+### ~~interface~~ dependencies segregation principle
+Limit the number of dependencies (and plugins) declared in your conventions plugins.
 
 ---
-## Usage
-```kotlin
-plugins {
-    id("fr.sjcqs.android.lib")  // ⬅️
-    id("com.squareup.sqldelight")
-}
-
-dependencies {
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.database)
-    implementation(libs.kotlin.coroutines.playServices)
-
-    implementation(libs.sqldelight.coroutines)
-
-    implementation(projects.data.game.public)
-}
-```
-
----
-## Writing a convention plugin
 ### Reusing a convention plugin
 
 We can reuse our convention plugin in another one.
@@ -357,47 +353,44 @@ class AndroidFeaturePlugin : Plugin<Project> {
     }
 }
 ```
-⏭️ Some gotchas and further thoughts
 
 ---
-## Gotchas & further thoughts
-### Gradle scripts
+`fr.sjcqs.android.app` convention plugin does **not** configure:
+- `versionName`
+- `versionCode`
+- `applicationId`
+
+Those are configured by the consuming modules.
+
+---
+## Performances
 It's possible to write gradle script in `src/main/java/<plugin-id>.build.gradle.kts`, Gradle will generate a plugin whose id is `<plugin-id>`
 
-Don't do this ([#39](https://github.com/android/nowinandroid/issues/39) on [android/nowinandroid](https://github.com/android/nowinandroid))
+Don't do this (cf issue [#39](https://github.com/android/nowinandroid/issues/39) on [android/nowinandroid](https://github.com/android/nowinandroid))
 
 |                      | scripts plugins | code plugins |
 |:--------------------:|:---------------:|--------------|
 | Configuring Projects |     12.724s     | 0.765s       |
 |   Total Build Time   |     25.373s     | 11.205s      |
----
-## Gotchas & further thoughts
-### Dependencies (~interface segregation principle)
-
-Limit the number of dependencies (and plugins) declared in your conventions plugins.
 
 ---
-## Gotchas & further thoughts
-### Further thoughts
+## Publishing
 
-1. You could publish those plugins to an internal maven repository, it should also improve configuration and build time. (using binary vs compilation)
-    But it comes at a few costs:
+You could publish those plugins to an internal maven repository, it should also improve configuration and build time. (using binary vs compilation)
+But it comes with a few costs:
     - Setup your CI to publish those plugins
     - Version the plugins
     - Switching between the internal repository and the included build when working on the build config
 
-2. Conventions plugins can be used in any Gradle multi-module projects (not just Android apps)
-
 ---
-## Gotchas & further thoughts
-### Notes
+## Disclaimers
 
 You don't have to follow this talk to the letter
 
 - Speak with your team:
-- How many modules do you have ?
-- Is build configuration a pain point ?
-- Would you be able to maintain those plugins ? (and teach how ?)
+    - How many modules do you have ?
+    - Is build configuration a pain point ?
+    - Would you be able to maintain those plugins ? (and teach how ?)
 - _I'm not perfect nor an expert on the subject. There might be things that could be done in a better way._
 
 ⏭️ Finally some references and peoples to follow
@@ -429,6 +422,9 @@ Be pragmatic, keep the scale of your app and your team in mind, take only what y
 
 ---
 ## Any Questions ❓
+
+## Code references and complete notes:
+[sjcqs/convention-plugins-android](github.com/sjcqs/convention-plugins-android)
 
 ## Feedbacks 👂
 
