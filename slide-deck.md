@@ -201,6 +201,24 @@ class AndroidLibPlugin : Plugin<Project> {
     }
 }
 ```
+---
+### Configure the Android extension
+Shared configuration properties:
+
+``` kotlin
+object Config {
+    val android = AndroidConfig(
+        minSdk = 26,
+        targetSdk = 31,
+        compileSdkVersion = 31,
+    )
+    val jvm = JvmConfig(
+        javaVersion = JavaVersion.VERSION_11,
+        kotlinJvm = "11",
+        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
+    )
+}
+```
 
 ---
 ### Configure the Android extension
@@ -218,24 +236,6 @@ class AndroidLibPlugin : Plugin<Project> {
             }
         }
     }
-}
-```
----
-### Configure the Android extension
-Shared configuration properties:
-
-``` kotlin
-object Config {
-    val android = AndroidConfig(
-        minSdk = 26,
-        targetSdk = 31,
-        compileSdkVersion = 31,
-     )
-     val jvm = JvmConfig(
-        javaVersion = JavaVersion.VERSION_11,
-        kotlinJvm = "11",
-        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
-    )
 }
 ```
 
