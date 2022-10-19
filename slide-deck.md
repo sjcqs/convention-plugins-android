@@ -7,14 +7,15 @@ Satyan Jacquens - developer @Mojo
 
 ---
 # A multi-module architecture
-### Why should I use a multi-module application ?
+### Why should I use a multi-module architecture ?
 
-- Part of the Google's Guide to app architecture
+- Separation of the concerns
 - Reduces the build time:
-    - api/impl modules pattern (compilation avoidance)
+    - public/impl modules pattern (compilation avoidance)
     - Only use the necessary plugins in your module (android plugins are expensive)
     - Gradle modules parallel compilation
 - Create several apps (demo apps, free vs pro, white-labelling, etc)
+- Part of the Google's Guide to app architecture
 - ~~Square/Slack/Twitter is doing it~~
 
 ---
